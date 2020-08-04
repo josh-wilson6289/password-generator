@@ -41,15 +41,9 @@ function generatePassword() {
   if (numbers === 'y') {
     passwordString = passwordString.concat(numbersString);
   }
-  else {
-    passwordString = passwordString;
-  }
 
   if (specialCharacters === 'y') {
     passwordString = passwordString.concat(specialCharactersString);
-  }
-  else {
-    passwordString = passwordString;
   }
 
 // Defines password variable that will be returned
