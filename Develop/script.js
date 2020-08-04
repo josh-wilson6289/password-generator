@@ -14,19 +14,14 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-
-
-
-
-
 // Set arrays for lowercase, uppercase, numbers, and special characters
-var lowercaseArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var uppercaseArr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var numbersArr = [1,2,3,4,5,6,7,8,9];
-var specialCharactersArr = ['!','@','#','$','%','^','&','*','(',')','-','_','=','+'];
+var lowercaseString = 'abcdefghijklmnopqrstuvwxyz';
+var uppercaseString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var numbersString = '123456789';
+var specialCharactersString = '!@#$%^&*()_+-='
 
-// Set passwordArr to be the final array to iterate over given user parameters.  Also declare final password variable.
-var passwordArr = [];
+// Set passwordString to be the final string to iterate over given user parameters.  
+var passwordString;
 
 // Prompt user for number of characters and whether to include uppercase, numbers, and special characters
 var passwordLength = prompt("Choose amount of characters between 8 and 128.");
@@ -34,34 +29,34 @@ var uppercase = prompt("Include uppercase letters? (y/n)");
 var numbers = prompt("Include numbers? (y/n)");
 var specialCharacters = prompt("Include special characters? (y/n)");
 
-// Concatinates arrays for uppercase, numbers, and special characters if user chooses to do so
+// Concatenates arrays for uppercase, numbers, and special characters if user chooses to do so
 if (uppercase === 'y') {
-  passwordArr = lowercaseArr.concat(uppercaseArr);
+  passwordString = lowercaseString.concat(uppercaseString);
 }
 else {
-  passwordArr = lowercaseArr;
+  passwordString = lowercaseString;
 
 }
 
 if (numbers === 'y') {
-  passwordArr = passwordArr.concat(numbersArr);
+  passwordString = passwordString.concat(numbersString);
 
 }
 else {
-  passwordArr = passwordArr;
+  passwordString = passwordString;
 }
 
 if (specialCharacters === 'y') {
-  passwordArr = passwordArr.concat(specialCharactersArr);
+  passwordString = passwordString.concat(specialCharactersString);
 }
 
 else {
-  passwordArr = passwordArr;
+  passwordString = passwordString;
 }
 
 // Outputs random characters in the array matching the user's inputted password length
 for (i=0; i < passwordLength; i++) {
-  password = passwordArr[Math.floor(Math.random() * passwordArr.length)];
+  password = passwordString[Math.floor(Math.random() * passwordString.length)];
   console.log(password);
 }
 
