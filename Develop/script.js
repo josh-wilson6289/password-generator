@@ -72,5 +72,6 @@ function generatePassword() {
     var iteration = passwordString[Math.floor(Math.random() * passwordString.length)];
     password = password + iteration;
   }
+  
   return(password);
 }  
