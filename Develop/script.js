@@ -50,7 +50,9 @@ function generatePassword() {
 
 // Outputs random characters in the array matching the user's inputted password length
   for (i=0; i < passwordLength; i++) {
-    password = passwordString[Math.floor(Math.random() * passwordString.length)];
-    console.log(password);
+    var iteration = passwordString[Math.floor(Math.random() * passwordString.length)];
+    console.log(iteration);
+    var password = password + iteration;
   }
+  return(password);
 }
