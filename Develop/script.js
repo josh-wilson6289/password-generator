@@ -40,19 +40,27 @@ function generatePassword() {
 
   if (numbers === 'y') {
     passwordString = passwordString.concat(numbersString);
-
+  }
+  else {
+    passwordString = passwordString;
   }
 
   if (specialCharacters === 'y') {
     passwordString = passwordString.concat(specialCharactersString);
   }
+  else {
+    passwordString = passwordString;
+  }
 
+// Defines password variable that will be returned
+  var password = '';
 
 // Outputs random characters in the array matching the user's inputted password length
   for (i=0; i < passwordLength; i++) {
     var iteration = passwordString[Math.floor(Math.random() * passwordString.length)];
     console.log(iteration);
-    var password = password + iteration;
+    password = password + iteration;
   }
+  console.log(password);
   return(password);
-}
+}  
