@@ -25,26 +25,29 @@ function generatePassword() {
 
   // Prompt user for number of characters and validates response
   var passwordLength = prompt("Choose amount of characters between 8 and 128.");
-  if (Number.isInteger(passwordLength) === false || passwordLength < 8 || passwordLength > 128) {
+
+  if (Number.isInteger(Number(passwordLength)) === false || passwordLength < 8 || passwordLength > 128) {
     prompt("Please choose a valid password length");
   }
 
   // Prompt user to include uppercase letters and validates response
-  var uppercase = prompt("Include uppercase letters? (y/n)");
-  if (uppercase.toLowerCase() !== 'y' || uppercase.toLowerCase !== 'n') {
+  var uppercase = prompt("Include uppercase letters? (y/n)").toLowerCase();
+  
+  if (uppercase !== 'y' && uppercase !== 'n') {
     prompt("Please choose y or n");
   }
 
   // Prompt user to include numbers and validates response  
-  var numbers = prompt("Include numbers? (y/n)");
-  if (numbers.toLowerCase !== 'y' || numbers.toLowerCase !== 'n') {
+  var numbers = prompt("Include numbers? (y/n)").toLowerCase();
+  
+  if (numbers !== 'y' && numbers !== 'n') {
     prompt("Please choose y or n");
   }
 
   // Prompt user to include special characters and validates response
-  var specialCharacters = prompt("Include special characters? (y/n)");
-  specialCharacters.toLowerCase();
-  if (specialCharacters !== 'y' || specialCharacters !== 'n') {
+  var specialCharacters = prompt("Include special characters? (y/n)").toLowerCase();
+  
+  if (specialCharacters !== 'y' && specialCharacters !== 'n') {
     prompt("Please choose y or n");
   }
 
@@ -69,9 +72,11 @@ function generatePassword() {
 
   // Outputs random characters in the array matching the user's inputted password length
   for (i = 0; i < passwordLength; i++) {
-    var iteration = passwordString[Math.floor(Math.random() * passwordString.length)];
+    var iteration = passwordString.charAt(Math.floor(Math.random() * passwordString.length));
     password = password + iteration;
   }
+//write function that checks password for all four types
 
   return (password);
 }  
+
