@@ -13,7 +13,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
+function generatePassword() {
 // Set arrays for lowercase, uppercase, numbers, and special characters
   var lowercaseString = 'abcdefghijklmnopqrstuvwxyz';
   var uppercaseString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -48,10 +48,9 @@ generateBtn.addEventListener("click", writePassword);
   }
 
 
-
 // Outputs random characters in the array matching the user's inputted password length
   for (i=0; i < passwordLength; i++) {
     password = passwordString[Math.floor(Math.random() * passwordString.length)];
     console.log(password);
   }
-
+}
