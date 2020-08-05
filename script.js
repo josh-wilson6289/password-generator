@@ -18,38 +18,66 @@ function generatePassword() {
   var lowercaseString = 'abcdefghijklmnopqrstuvwxyz';
   var uppercaseString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var numbersString = '123456789';
-  var specialCharactersString = '!@#$%^&*()_+-='
+  var specialCharactersString = '!@#$%^&*()_+-=';
 
   // Set passwordString to be the final string to iterate over given user parameters.  
   var passwordString;
 
   // Prompt user for number of characters and validates response
+  var validation;
   var passwordLength = prompt("Choose amount of characters between 8 and 128.");
 
-  if (Number.isInteger(Number(passwordLength)) === false || passwordLength < 8 || passwordLength > 128) {
-    prompt("Please choose a valid password length");
+  do {
+    if (Number.isInteger(Number(passwordLength)) === false || passwordLength < 8 || passwordLength > 128) {
+      validation = false;
+      var passwordLength = prompt("Please choose a valid password length between 8 and 128.").toLowerCase();
+    }
+    else {
+      validation = true;
+    }
   }
+  while (validation = false);
 
   // Prompt user to include uppercase letters and validates response
   var uppercase = prompt("Include uppercase letters? (y/n)").toLowerCase();
-  
-  if (uppercase !== 'y' && uppercase !== 'n') {
-    prompt("Please choose y or n");
+
+  do {
+    if (uppercase !== 'y' && uppercase !== 'n') {
+      prompt("Please choose y or n").toLowerCase();
+      validation = false;
+    }
+    else {
+      validation = true;
+    }
   }
+  while (validation = false);
 
   // Prompt user to include numbers and validates response  
   var numbers = prompt("Include numbers? (y/n)").toLowerCase();
-  
-  if (numbers !== 'y' && numbers !== 'n') {
-    prompt("Please choose y or n");
-  }
 
+  do {   
+    if (numbers !== 'y' && numbers !== 'n') {
+      prompt("Please choose y or n").toLowerCase();
+      validation = false;
+    }
+    else {
+      validation = true;
+    }
+  }
+  while (validation = false);
+  
   // Prompt user to include special characters and validates response
   var specialCharacters = prompt("Include special characters? (y/n)").toLowerCase();
-  
-  if (specialCharacters !== 'y' && specialCharacters !== 'n') {
-    prompt("Please choose y or n");
+  do {
+    if (specialCharacters !== 'y' && specialCharacters !== 'n') {
+      prompt("Please choose y or n").toLowerCase();
+      validation = false;
+    }
+    else {
+      validation = true;
+    }
   }
+  while (validation = false);
 
   // Concatenates strings for uppercase, numbers, and special characters if user chooses to do so
   if (uppercase === 'y') {
