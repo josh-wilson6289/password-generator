@@ -13,6 +13,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// Function that returns random password given user parameters
 function generatePassword() {
   // Set arrays for lowercase, uppercase, numbers, and special characters
   var lowercaseString = 'abcdefghijklmnopqrstuvwxyz';
@@ -24,60 +25,33 @@ function generatePassword() {
   var passwordString;
 
   // Prompt user for number of characters and validates response
-  var validation;
   var passwordLength = prompt("Choose amount of characters between 8 and 128.");
 
-  do {
-    if (Number.isInteger(Number(passwordLength)) === false || passwordLength < 8 || passwordLength > 128) {
-      validation = false;
-      var passwordLength = prompt("Please choose a valid password length between 8 and 128.").toLowerCase();
-    }
-    else {
-      validation = true;
-    }
+  while (Number.isInteger(Number(passwordLength)) === false || passwordLength < 8 || passwordLength > 128) {
+    var passwordLength = prompt("Please choose a valid password length between 8 and 128.").toLowerCase();
   }
-  while (validation = false);
 
   // Prompt user to include uppercase letters and validates response
   var uppercase = prompt("Include uppercase letters? (y/n)").toLowerCase();
 
-  do {
-    if (uppercase !== 'y' && uppercase !== 'n') {
-      prompt("Please choose y or n").toLowerCase();
-      validation = false;
-    }
-    else {
-      validation = true;
-    }
+  while (uppercase !== 'y' && uppercase !== 'n') {
+    var uppercase = prompt("Please choose y or n").toLowerCase();
   }
-  while (validation = false);
 
   // Prompt user to include numbers and validates response  
   var numbers = prompt("Include numbers? (y/n)").toLowerCase();
 
-  do {   
-    if (numbers !== 'y' && numbers !== 'n') {
-      prompt("Please choose y or n").toLowerCase();
-      validation = false;
-    }
-    else {
-      validation = true;
-    }
+  while (numbers !== 'y' && numbers !== 'n') {
+    var numbers = prompt("Please choose y or n").toLowerCase();
   }
-  while (validation = false);
-  
+
   // Prompt user to include special characters and validates response
   var specialCharacters = prompt("Include special characters? (y/n)").toLowerCase();
-  do {
-    if (specialCharacters !== 'y' && specialCharacters !== 'n') {
-      prompt("Please choose y or n").toLowerCase();
-      validation = false;
-    }
-    else {
-      validation = true;
-    }
+
+  while (specialCharacters !== 'y' && specialCharacters !== 'n') {
+    var specialCharacters = prompt("Please choose y or n").toLowerCase();
   }
-  while (validation = false);
+
 
   // Concatenates strings for uppercase, numbers, and special characters if user chooses to do so
   if (uppercase === 'y') {
@@ -103,8 +77,7 @@ function generatePassword() {
     var iteration = passwordString.charAt(Math.floor(Math.random() * passwordString.length));
     password = password + iteration;
   }
-//write function that checks password for all four types
 
   return (password);
-}  
+}
 
