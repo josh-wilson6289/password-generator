@@ -25,10 +25,10 @@ function generatePassword() {
   var passwordString;
 
   // Prompt user for number of characters and validates response
-  var passwordLength = prompt("Choose amount of characters between 8 and 128.");
+  var passwordLength = prompt("How many characters would you like this password to be?  Please choose between 8 and 128.");
 
   while (Number.isInteger(Number(passwordLength)) === false || passwordLength < 8 || passwordLength > 128) {
-    var passwordLength = prompt("Please choose a valid password length between 8 and 128.").toLowerCase();
+    var passwordLength = prompt("Please choose a valid password length between 8 and 128.");
   }
 
   // Prompt user to include uppercase letters and validates response
@@ -52,7 +52,6 @@ function generatePassword() {
     var specialCharacters = prompt("Please choose y or n").toLowerCase();
   }
 
-
   // Concatenates strings for uppercase, numbers, and special characters if user chooses to do so
   if (uppercase === 'y') {
     passwordString = lowercaseString.concat(uppercaseString);
@@ -75,9 +74,8 @@ function generatePassword() {
   // Outputs random characters in the array matching the user's inputted password length
   for (i = 0; i < passwordLength; i++) {
     var iteration = passwordString.charAt(Math.floor(Math.random() * passwordString.length));
-    password = password + iteration;
+    password = password += iteration;
   }
 
   return (password);
 }
-
