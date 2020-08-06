@@ -20,9 +20,9 @@ function generatePassword() {
   var uppercaseString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var numbersString = '123456789';
   var specialCharactersString = '!@#$%^&*()_+-=';
-
+  
   // Set passwordString to be the final string to iterate over given user parameters.  
-  var passwordString;
+  var passwordString ='';
 
   // Prompt user for number of characters and validates response
   var passwordLength = prompt("How many characters would you like this password to be?  Please choose between 8 and 128.");
@@ -74,8 +74,8 @@ function generatePassword() {
   // Outputs random characters in the array matching the user's inputted password length
   for (i = 0; i < passwordLength; i++) {
     var iteration = passwordString.charAt(Math.floor(Math.random() * passwordString.length));
-    password = password += iteration;
+    password += iteration;
   }
 
-  return (password);
+  return password;
 }
