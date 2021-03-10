@@ -12,6 +12,7 @@ This website generates a random password given parameters inputted from the user
 The website also validates the user's input to ensure the values being entered are correct.
 
 **Technologies Used**
+
 Vanilla Javascript and CSS.  The app uses Javascript prompts to get information from the user.  The code uses string concatenation to create a string of possible password characters, then loops through the string selecting random indexes meeting the given password length.
 
 **Deployed App**
