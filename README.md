@@ -1,5 +1,8 @@
 # JavaScript Password Generator
 
+![03-javascript-homework-demo](https://user-images.githubusercontent.com/68122047/110686736-5c1e2b00-81a5-11eb-93b9-13cd643a5157.png)
+
+
 **Overview**
 
 This website generates a random password given parameters inputted from the user.  The user chooses the following:
